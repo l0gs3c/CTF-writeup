@@ -81,5 +81,6 @@ Trong source được cung cấp mình có thấy file *flag.txt*
 - Tất cả dữ liệu truyền vào không được fillter.
 - 2 tham số current_health, attack_power sẽ được chuyển sang kiểu int trước khi xử lý => đầu ra sẽ phải là kiểu int.
 
-=> Có thể truyền mã khai thác thông qua tham số operator, hàm exec() sẽ tiếp tay :) . Kết quả phải chuyển qua kiểu int để việc cộng với current_health, attack_power không gây lỗi.
+=> Có thể truyền mã khai thác thông qua tham số operator, hàm exec() sẽ tiếp tay :) . 
+Kết quả phải chuyển qua kiểu int để việc cộng với current_health, attack_power không gây lỗi.
 Và mã khai thác của mình: [ở đây](./exploit.py)
