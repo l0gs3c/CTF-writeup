@@ -2,7 +2,7 @@
 
 * ## [web/swill-squill]
 
-Source code: [here](/swill-squill)
+Source code: [here](swill-squill)
 
 ```
 def create_db():
@@ -42,7 +42,7 @@ Then I send a request to /api and read the flag from admin's note.
 
 * ## [web/ez-sql]
 
-Source code: [here](/ez-sql)
+Source code: [here](ez-sql)
 ```
 app.get('/search', (req, res) => {
     const { name } = req.query;
@@ -71,19 +71,19 @@ To bypass `name.length > 6`, I send arrays instead of strings (http://example.co
 
 And now, name.length=1 (1 element in the array)
 
-<img src= "TJCTF-2023/ezsql/Screenshot 2023-05-27 131537.png">
+<img src= "ezsql/Screenshot 2023-05-27 131537.png">
 
 Check to make sure sql can be injected with simple payload: `name[0]=aaaaaaa%25'--`
-<img src= "TJCTF-2023/ezsql/Screenshot 2023-05-27 131800.png">
+<img src= "ezsql/Screenshot 2023-05-27 131800.png">
 
 Extract table name contain flag: name[0]=aaaaaaa%' union select 1, tbl_name FROM sqlite_master--
-<img src= "TJCTF-2023/ezsql/Screenshot 2023-05-27 131429.png">
+<img src= "ezsql/Screenshot 2023-05-27 131429.png">
 
 Extract flag:
-<img src= "TJCTF-2023/ezsql/Screenshot 2023-05-27 131659.png">
+<img src= "ezsql/Screenshot 2023-05-27 131659.png">
 
-* ## [web/back-to-the-past](/back-to-the-past)
-Source code: [here](/back-to-the-past)
+* ## [web/back-to-the-past](TJCTF-2023/back-to-the-past)
+Source code: [here](back-to-the-past)
 
 Insecure signature authentication.
 ```
@@ -97,7 +97,7 @@ def verify_token(token):
     except:
         return None
 ```
-Public key used to authenticate leaked signature ([public key here](/back-to-the-past/static/public_key.pem)). I can use it to generate fake JWT signature using HS256 algorithm.
+Public key used to authenticate leaked signature ([public key here](TJCTF-2023/back-to-the-past/static/public_key.pem)). I can use it to generate fake JWT signature using HS256 algorithm.
 
 Then, I send a request to `/retro` with the fake JWT to get the flag (in the fake JWT payload there is a `year` field less than 1970).
 ```@app.route("/retro")
@@ -109,10 +109,10 @@ def retro(user):
         return render_template("retro.html", flag=flag)
 ```
 
-Code written by me in Python to generate and validate JWT: [here](/back-to-the-past/solution.py)
+Code written by me in Python to generate and validate JWT: [here](TJCTF-2023/back-to-the-past/solution.py)
 
-* ## [web/notes](/notes)
-Source code: [here](/notes)
+* ## [web/notes](notes)
+Source code: [here](notes)
 
 ```
 pool.query(`SELECT * FROM notes WHERE user_id = '${req.session.user_id}';`, (err, results) => {
