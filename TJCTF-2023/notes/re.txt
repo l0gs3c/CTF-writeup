@@ -1,0 +1,5 @@
+register
+abc'), ('abc', 'l0gs3c', 'l0gs3c');-- -
+
+delete
+a' or id = 'abc'-- -
