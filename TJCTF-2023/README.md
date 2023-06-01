@@ -179,6 +179,6 @@ Now the query will work normally, session for user2 is created
 
 4. Reload page in browser B
 
-Now the things that still exist include user1 session and user2 account
+Now the things that still exist include user1 account and user2 session
 
 Reload the page with `user2` session, `username2` will be replaced with `flag`
